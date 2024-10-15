@@ -1,5 +1,5 @@
 import { useSlots } from "vue";
-import { hasSlot } from "../../utils";
+import { hasSlot } from "./has-slot";
 
 export function useSlotUtils() {
     const $slots = useSlots()

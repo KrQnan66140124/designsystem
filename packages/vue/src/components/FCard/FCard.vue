@@ -2,7 +2,7 @@
     <div class="card card--default">
         <div v-if="hasHeaderSlot" class="card__header">
             <!--@slot Slot for the title. -->
-            <slot name="header" class="card__header-label"></slot>
+            <slot name="header" v-bind="{ headingSlotClass: 'card__header-label' }"></slot>
         </div>
         <div class="card__content">
             <!--@slot Slot for the main content, e.g. paragraphs, input fields, etc. -->
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useSlotUtils } from "./useSlotUtils";
+import { useSlotUtils } from "../../utils/useSlotUtils";
 
 const { hasSlot } = useSlotUtils();
 const hasHeaderSlot = computed(() => hasSlot("header"));
